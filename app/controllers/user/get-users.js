@@ -1,7 +1,8 @@
 const User = require('../../models/User');
 
 const controller = async (req, res) => {
-  const users = await User.find();
+  console.log(req.query);
+  const users = await User.find(req.query);
   res.send(users);
 }
 
